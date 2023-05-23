@@ -2,29 +2,89 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800&family=Inter:wght@200;300;400;500;600;700;800&family=Raleway:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap");
+
 
 .wrapper {
   max-width: 1920px;
   margin: 0 auto;
   width: 100%;
 }
+
 .font-raleway {
   font-family: "Raleway", sans-serif;
 }
+
 .font-inter {
   font-family: "Inter", sans-serif;
 }
+
 .font-cinzel {
   font-family: "Cinzel", serif;
 }
+
 .nav-bg {
   background-color: rgba(21, 21, 21, 0.5);
 }
+
 .carousel {
   display: flex;
   justify-content: center;
 }
+
 .carousel .slide {
   height: 800px;
+}
+
+.section-subheading {
+  font-family: 'Inter';
+  font-style: italic;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 24px;
+  text-align: center;
+  margin-bottom: 16px;
+
+  color: #D99904;
+
+}
+
+.section-heading {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 40px;
+  line-height: 48px;
+  padding: 24px 0;
+  text-align: center;
+
+  /* Dark 01 */
+  text-transform: uppercase;
+
+  color: #151515;
+  border-bottom: 4px solid #E8E8E8;
+  border-top: 4px solid #E8E8E8;
+}
+
+.menu-item-title {
+  font-family: 'Cinzel';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 27px;
+  /* identical to box height */
+
+
+  /* Dark 01 */
+
+  color: #151515;
+}
+
+.menu-recipe {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 26px;
+
+  color: #737373;
 }

@@ -2,8 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
-
 .wrapper {
   max-width: 1920px;
   margin: 0 auto;
@@ -36,7 +34,7 @@
 }
 
 .section-subheading {
-  font-family: 'Inter';
+  font-family: "Inter";
   font-style: italic;
   font-weight: 400;
   font-size: 20px;
@@ -44,12 +42,11 @@
   text-align: center;
   margin-bottom: 16px;
 
-  color: #D99904;
-
+  color: #d99904;
 }
 
 .section-heading {
-  font-family: 'Inter';
+  font-family: "Inter";
   font-style: normal;
   font-weight: 400;
   font-size: 40px;
@@ -61,18 +58,17 @@
   text-transform: uppercase;
 
   color: #151515;
-  border-bottom: 4px solid #E8E8E8;
-  border-top: 4px solid #E8E8E8;
+  border-bottom: 4px solid #e8e8e8;
+  border-top: 4px solid #e8e8e8;
 }
 
 .menu-item-title {
-  font-family: 'Cinzel';
+  font-family: "Cinzel";
   font-style: normal;
   font-weight: 400;
   font-size: 20px;
   line-height: 27px;
   /* identical to box height */
-
 
   /* Dark 01 */
 
@@ -80,11 +76,43 @@
 }
 
 .menu-recipe {
-  font-family: 'Inter';
+  font-family: "Inter";
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
   line-height: 26px;
 
   color: #737373;
+}
+
+/* Tab  Styles */
+
+.react-tabs__tab {
+  border: none !important;
+  position: none!;
+}
+.react-tabs__tab--selected {
+  border-bottom: 4px solid #bb8506 !important;
+  color: #bb8506;
+}
+
+.react-tabs__tab-list {
+  text-align: center;
+  border: none !important;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 29px;
+  /* identical to box height */
+
+  text-align: center;
+  text-transform: uppercase;
+
+  /* Dark 01 */
+
+  color: #151515;
+}
+.react-tabs__tab-list li {
+  margin-right: 57px;
 }

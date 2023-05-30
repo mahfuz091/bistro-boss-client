@@ -1,18 +1,48 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import {
   loadCaptchaEnginge,
   LoadCanvasTemplate,
   validateCaptcha,
 } from "react-simple-captcha";
 import img from "../../assets/others/authentication2.png";
+import { AuthContext } from "../../providers/AuthProvider";
+import { useLocation, useNavigate } from "react-router-dom";
+import Swal from "sweetalert2";
 
 const Login = () => {
   const [disabled, setDisabled] = useState(true);
-  console.log(disabled);
+
+  const { signIn } = useContext(AuthContext);
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const from = location.state?.from?.pathname || "/";
 
   useEffect(() => {
     loadCaptchaEnginge(6);
   }, []);
+
+  const handleLogin = (event) => {
+    event.preventDefault();
+    const form = event.target;
+    const email = form.email.value;
+    const password = form.password.value;
+    console.log(email, password);
+    signIn(email, password).then((result) => {
+      const user = result.user;
+      console.log(user);
+      Swal.fire({
+        title: "User Login Successful.",
+        showClass: {
+          popup: "animate__animated animate__fadeInDown",
+        },
+        hideClass: {
+          popup: "animate__animated animate__fadeOutUp",
+        },
+      });
+      navigate(from, { replace: true });
+    });
+  };
 
   const handleValidateCaptcha = (e) => {
     const user_captcha_value = e.target.value;
@@ -31,7 +61,7 @@ const Login = () => {
           <img className='w-[645px]' src={img} alt='' />
         </div>
         <div className='  w-[536px]'>
-          <div className=''>
+          <form onSubmit={handleLogin}>
             <h1 className='text-center text-4xl font-bold mb-5'>Login</h1>
             <div className='form-control'>
               <label className='label'>
@@ -79,7 +109,7 @@ const Login = () => {
                 value='Login'
               />
             </div>
-          </div>
+          </form>
         </div>
       </div>
     </div>

@@ -116,3 +116,20 @@
 .react-tabs__tab-list li {
   margin-right: 57px;
 }
+
+.login-wrapper {
+  background-image: url(../src/assets/reservation/wood-grain-pattern-gray1x.png);
+  padding: 105px 175px;
+}
+.login {
+  background-image: url(../src/assets/others/authentication.png);
+  box-shadow: 10px 10px 10px 10px rgba(0, 0, 0, 0.25);
+  padding: 58px 193px 44px 100px;
+}
+
+.btn-login {
+  background: rgba(209, 160, 84, 0.7);
+  border-radius: 8px;
+
+  color: white;
+}

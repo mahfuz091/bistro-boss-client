@@ -133,3 +133,16 @@
 
   color: white;
 }
+.drawer-side a.active {
+  color: white;
+}
+.drawer-side a {
+  background-color: transparent;
+}
+.swal2-confirm {
+  margin-right: 10px;
+  padding: 5px;
+}
+.swal2-cancel {
+  padding: 5px;
+}

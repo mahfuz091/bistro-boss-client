@@ -6,7 +6,7 @@ import {
 } from "react-simple-captcha";
 import img from "../../assets/others/authentication2.png";
 import { AuthContext } from "../../providers/AuthProvider";
-import { useLocation, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 
 const Login = () => {
@@ -110,6 +110,7 @@ const Login = () => {
               />
             </div>
           </form>
+          <p className="text-center mt-8 text-[#D1A054] text-xl font-medium"><small>New Here? <Link to="/signup">Create an account</Link> </small></p>
         </div>
       </div>
     </div>

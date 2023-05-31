@@ -1,13 +1,17 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../../providers/AuthProvider";
+import cartimg from '../../../assets/icon/cart.png'
+import useCart from "../../../hooks/useCart";
 
 const NavBar = () => {
   const { user, logOut } = useContext(AuthContext);
 
+  const [cart] = useCart()
+
   const handleLogout = () => {
     logOut()
-      .then(() => {})
+      .then(() => { })
       .catch((error) => console.log(error));
   };
   const navOptions = (
@@ -27,9 +31,17 @@ const NavBar = () => {
       <li>
         <Link to='/order/salad'>OurShop</Link>
       </li>
+      <li>
+        <Link to='/'>
+          <img className='w-14' src={cartimg} alt="" />
+          <div className="badge badge-secondary rounded-full absolute bottom-0 right-0 w-8 h-8 p-5 text-lg font-semibold">{cart?.length || 0}</div>
+        </Link>
+      </li>
       {user ? (
         <>
-          <img className='w-14' src={user?.photoURL} alt='' />
+          <li >
+            <img className='w-20' src={user?.photoURL} alt='' />
+          </li>
           <li>
             <Link>Signout</Link>
           </li>

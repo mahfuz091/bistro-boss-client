@@ -42,10 +42,10 @@ const NavBar = () => {
       {user ? (
         <>
           <li>
-            <img className='w-20' src={user?.photoURL} alt='' />
+            <img className='w-20 rounded-full' src={user?.photoURL} alt='' />
           </li>
           <li>
-            <Link>Signout</Link>
+            <Link onClick={handleLogout}>Signout</Link>
           </li>
         </>
       ) : (

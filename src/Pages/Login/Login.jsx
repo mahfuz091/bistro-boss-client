@@ -8,6 +8,7 @@ import img from "../../assets/others/authentication2.png";
 import { AuthContext } from "../../providers/AuthProvider";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
+import SocialLogin from "../Shared/SocialLogin/SocialLogin";
 
 const Login = () => {
   const [disabled, setDisabled] = useState(true);
@@ -23,6 +24,7 @@ const Login = () => {
   }, []);
 
   const handleLogin = (event) => {
+    console.log("clicked");
     event.preventDefault();
     const form = event.target;
     const email = form.email.value;
@@ -30,7 +32,7 @@ const Login = () => {
     console.log(email, password);
     signIn(email, password).then((result) => {
       const user = result.user;
-      console.log(user);
+      // console.log(user);
       Swal.fire({
         title: "User Login Successful.",
         showClass: {
@@ -46,7 +48,7 @@ const Login = () => {
 
   const handleValidateCaptcha = (e) => {
     const user_captcha_value = e.target.value;
-    console.log(user_captcha_value);
+    // console.log(user_captcha_value);
     if (validateCaptcha(user_captcha_value)) {
       setDisabled(false);
     } else {
@@ -70,6 +72,7 @@ const Login = () => {
               <input
                 type='text'
                 placeholder='email'
+                name='email'
                 className='input input-bordered'
               />
             </div>
@@ -78,8 +81,9 @@ const Login = () => {
                 <span className='text-xl'>Password</span>
               </label>
               <input
-                type='text'
+                type='password'
                 placeholder='password'
+                name='password'
                 className='input input-bordered'
               />
               <label className='label'>
@@ -110,7 +114,12 @@ const Login = () => {
               />
             </div>
           </form>
-          <p className="text-center mt-8 text-[#D1A054] text-xl font-medium"><small>New Here? <Link to="/signup">Create an account</Link> </small></p>
+          <p className='text-center mt-8 text-[#D1A054] text-xl font-medium'>
+            <small>
+              New Here? <Link to='/signup'>Create an account</Link>{" "}
+            </small>
+          </p>
+          <SocialLogin></SocialLogin>
         </div>
       </div>
     </div>

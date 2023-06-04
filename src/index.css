@@ -146,3 +146,10 @@
 .swal2-cancel {
   padding: 5px;
 }
+
+.menu[class*=" px-"]:not(.menu[class*=" px-0"]) li > *,
+.menu[class^="px-"]:not(.menu[class^="px-0"]) li > *,
+.menu[class*=" p-"]:not(.menu[class*=" p-0"]) li > *,
+.menu[class^="p-"]:not(.menu[class^="p-0"]) li > * {
+  border-radius: 50%;
+}
